@@ -4,7 +4,7 @@ FROM node:14-alpine
 RUN mkdir -p /usr/src/app
 #Set the working directory
 WORKDIR /usr/src/app
-Copy the package.json and package-lock.json files
+#Copy the package.json and package-lock.json files
 COPY package*.json ./
 #Install the application dependencies
 RUN npm ci
