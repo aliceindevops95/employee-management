@@ -1,12 +1,9 @@
-FROM node:16-alpine
-
+FROM node:14-alpine
+RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
-
-COPY package*.json /front-app/
-
+COPY package*.json ./
 RUN npm install
-
-# Mentioned exposed port for documentation
+COPY . .
+RUN npm run build --prod
 EXPOSE 4200
-
 CMD ["npm", "start"]
