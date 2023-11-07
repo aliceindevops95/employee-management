@@ -2,7 +2,7 @@ FROM node:16-alpine
 
 WORKDIR /front-app
 
-COPY package*.json ./
+COPY package*.json /front-app/
 
 RUN npm install
 
